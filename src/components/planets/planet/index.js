@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState} from "react";
 import ImgUrl from "../../shared";
 
 async function getSatellites(id) {
@@ -6,31 +6,23 @@ async function getSatellites(id) {
     let data = await response.json();
     return data;
 }
-class Planet extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            Satellites: []
-        };
-    }
 
-    componentDidMount() {
-        getSatellites(this.props.id).then(data =>
-            this.setState(state => state.Satellites = data['satellites'])
-        );
-    }
+const Planet = (props) => {
+    const [satellites, setSatellites] = useState([]);
 
-    render() {
-        return (
-            <Fragment>
-                <h3>{this.props.name}</h3>
-                <p>{this.props.description}</p>
-                <p><a href={this.props.link}>Saiba mais</a></p>
-                <ImgUrl url_img={this.props.url_img}></ImgUrl>
-                <ul>
-                    {this.state.Satellites.map(obj => <li>{obj.name}</li>)}
-                </ul>
-            </Fragment>);
-    }
+    useEffect(() => {
+        getSatellites(props.id).then(data => setSatellites(data['satellites']))
+    });
+
+    return (
+        <Fragment>
+            <h3>{props.name}</h3>
+            <p>{props.description}</p>
+            <p><a href={props.link}>Saiba mais</a></p>
+            <ImgUrl url_img={props.url_img}></ImgUrl>
+            <ul>
+                {satellites.map(obj => <li>{obj.name}</li>)}
+            </ul>
+        </Fragment>);
 }
 export default Planet;
