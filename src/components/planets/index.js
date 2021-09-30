@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Planet from "./planet";
 async function getPlanets() {
     let response = await fetch("http://localhost:3000/api/planets.json");
@@ -6,7 +6,33 @@ async function getPlanets() {
     return data;
 }
 
-class Planets extends React.Component {
+const Planets = () => {
+    const [planets, setPlanets] = useState([]);
+
+    useEffect(() => {
+        getPlanets().then(planets => setPlanets(planets['planets']));
+    });
+
+    return (
+        <Fragment>
+            <h2>Lista de Planetas</h2>
+            
+            {planets.map((planet) =>
+                <div>
+                    <hr />
+                    <Planet
+                        name={planet.name}
+                        description={planet.description}
+                        link={planet.link}
+                        url_img={planet.url_img}
+                        id = {planet.id}
+                    />
+                </div>
+            )}
+        </Fragment>);
+}
+
+/* class Planets extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,5 +66,5 @@ class Planets extends React.Component {
                 )}
             </Fragment>);
     }
-}
+} */
 export default Planets;
