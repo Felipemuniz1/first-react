@@ -3,9 +3,11 @@ import Planets from "./components/planets";
 
 function App() {
   return (
-    <div>
-      <Planets/>
-    </div>
+      <div className='container'>
+        <div className='row'>
+          <Planets/>
+        </div>
+      </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState} from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ImgUrl from "../../shared";
 
 async function getSatellites(id) {
@@ -16,13 +16,20 @@ const Planet = (props) => {
 
     return (
         <Fragment>
-            <h3>{props.name}</h3>
-            <p>{props.description}</p>
-            <p><a href={props.link}>Saiba mais</a></p>
+            <div className='card'>
             <ImgUrl url_img={props.url_img}></ImgUrl>
-            <ul>
-                {satellites.map(obj => <li>{obj.name}</li>)}
-            </ul>
+            <div className='card-body'>
+                <h5 className='card-title'>{props.name}</h5>
+                <p className='card-text'>{props.description}</p>
+                <h5>Satellites:</h5>
+                <ul>
+                    {satellites.map(obj => <li>{obj.name}</li>)}
+                </ul>
+                <a href={props.link} className='btn btn-dark'>Saiba mais</a>
+            </div>
+            </div>
+            
+            
         </Fragment>);
 }
 export default Planet;
