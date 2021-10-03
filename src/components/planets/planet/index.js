@@ -21,7 +21,7 @@ const Planet = (props) => {
             <ImgUrl url_img={props.url_img}></ImgUrl>
             <div className='card-body'>
                 <h5 className='card-title'>{props.name}</h5>
-                <p className='card-text'>{props.description}</p>
+               {/*  <p className='card-text'>{props.description}</p> */}
                 
             </div>
             </div>

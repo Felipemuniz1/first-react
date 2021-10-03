@@ -1,15 +1,26 @@
+html {
+    background-color: rgb(34, 34, 34);
+}
 body{
-    background-color: rgb(35, 38, 46);
+    background-color: rgba(0, 0, 0, 0.281);
+    color: #f8f8f8a4;
 }
 
 .card{
-    margin: 1cm;
+    margin: 3px 3px 1cm;
+    background-color: #201c29a6;
 }
 
-h2{
-    color: rgb(213, 212, 224);
-}
+
 
 .col{
     justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: #f8f8f8a4;
+}
+.navbar-brand.mb-0.h1 {
+    font-size: 24px;
 }

@@ -11,28 +11,34 @@ const Planets = () => {
 
     useEffect(() => {
         getPlanets().then(planets => setPlanets(planets['planets']));
-    },[]);
+    }, []);
     const addPlanet = () => {
         let aux = planets[0];
-        setPlanets([aux,...planets]);
+        setPlanets([aux, ...planets]);
     };
     return (
         <Fragment>
-            <h2>Lista de Planetas</h2>
-            <button className='btn btn-primary' onClick={addPlanet}>Adicionar</button>
-            <div className='container'>
-            <div className='row row-cols-4'>
-                {planets.map((planet) =>
-                <div className='col'>
-                    <Planet
-                        name={planet.name}
-                        description={planet.description}
-                        link={planet.link}
-                        url_img={planet.url_img}
-                        id={planet.id}
-                    />
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 h1">Lista de Planetas</span>
+                    <button className='btn btn-primary' onClick={addPlanet}>Adicionar mais um planeta</button>
                 </div>
-                )}
+            </nav>
+            <h2></h2>
+            
+            <div className='container'>
+                <div className='row row-cols-4'>
+                    {planets.map((planet) =>
+                        <div className='col'>
+                            <Planet
+                                name={planet.name}
+                                description={planet.description}
+                                link={planet.link}
+                                url_img={planet.url_img}
+                                id={planet.id}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         </Fragment>);
