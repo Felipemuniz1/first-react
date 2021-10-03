@@ -20,8 +20,10 @@ const Planets = () => {
         <Fragment>
             <h2>Lista de Planetas</h2>
             <button className='btn btn-primary' onClick={addPlanet}>Adicionar</button>
+            <div className='container'>
+            <div className='row row-cols-4'>
                 {planets.map((planet) =>
-                <div className='col-3'>
+                <div className='col'>
                     <Planet
                         name={planet.name}
                         description={planet.description}
@@ -31,7 +33,8 @@ const Planets = () => {
                     />
                 </div>
                 )}
-            
+                </div>
+            </div>
         </Fragment>);
 }
 

@@ -3,14 +3,13 @@ body{
 }
 
 .card{
-    width: 100%;
-    height: 100%;
     margin: 1cm;
 }
 
 h2{
     color: rgb(213, 212, 224);
 }
-.col-3{
-    margin: 3px;
+
+.col{
+    justify-content: center;
 }
