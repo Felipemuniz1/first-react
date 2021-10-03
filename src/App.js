@@ -1,9 +1,8 @@
 
-import Planets from "./components/planets";
-
+import Routes from "./Routes";
 function App() {
   return (
-      <Planets></Planets>
+      <Routes/>
   );
 }
 

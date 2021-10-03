@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import Planet from "./planet";
+import PlanetCard from "./planetCard";
 async function getPlanets() {
     let response = await fetch("http://localhost:3000/api/planets.json");
     let data = await response.json();
@@ -28,9 +28,8 @@ const Planets = () => {
                 <div className='row row-cols-4'>
                     {planets.map((planet) =>
                         <div className='col'>
-                            <Planet
+                            <PlanetCard
                                 name={planet.name}
-                                description={planet.description}
                                 link={planet.link}
                                 url_img={planet.url_img}
                                 id={planet.id}
