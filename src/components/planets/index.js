@@ -18,14 +18,12 @@ const Planets = () => {
     };
     return (
         <Fragment>
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <span class="navbar-brand mb-0 h1">Lista de Planetas</span>
+            <nav className="navbar navbar-dark bg-dark">
+                <div className="container-fluid">
+                    <span className="navbar-brand mb-0 h1">Lista de Planetas</span>
                     <button className='btn btn-primary' onClick={addPlanet}>Adicionar mais um planeta</button>
                 </div>
             </nav>
-            <h2></h2>
-            
             <div className='container'>
                 <div className='row row-cols-4'>
                     {planets.map((planet) =>

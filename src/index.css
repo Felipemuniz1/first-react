@@ -7,7 +7,7 @@ body{
 }
 
 .card{
-    margin: 3px 3px 1cm;
+    margin: 1cm  3px;
     background-color: #201c29a6;
 }
 
@@ -23,4 +23,8 @@ a{
 }
 .navbar-brand.mb-0.h1 {
     font-size: 24px;
+}
+
+a:hover .card {
+    background-color: white !important;
 }
