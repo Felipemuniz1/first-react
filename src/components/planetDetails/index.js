@@ -27,29 +27,21 @@ const Planet = () => {
                     <Link to='/'><button className='btn btn-outline-primary' >Voltar para Lista</button></Link>
                 </div>
             </nav>
-            <div>
-            
-
-                <div class="row">
-                    <div class="col-2"><img src={planet.img_url} class="img-thumbnail" /></div>
-                    <div class="col-9">
-                        
+            <div className='wrapper'>
+                <div className="row">
+                    <div className="col-2"><img src={planet.img_url} class="img-thumbnail" /></div>
+                    <div className="col-9">
                         <h5 >{planet.name}</h5>
                         <p>{planet.description}</p>
                         <h5>Satellites:</h5>
                         <ul>
-                            {satellites.map(obj => <li>{obj.name}</li>)}
+                            {satellites.map((obj, index) => <li key={index}>{obj.name}</li>)}
                         </ul>
-                        <a href={planet.link} className='btn btn-dark'>Saiba mais</a>
+                        <a href={planet.link} className='btn btn-outline-primary'>Saiba mais</a>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
         </Fragment >);
 }
+
 export default Planet;

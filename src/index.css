@@ -9,22 +9,19 @@ body{
 .card{
     margin: 1cm  3px;
     background-color: #201c29a6;
+    color: #f8f8f8a4;
 }
-
-
-
+    .card:hover{
+        background-color: white !important;
+    }
 .col{
     justify-content: center;
 }
 
-a{
-    text-decoration: none;
-    color: #f8f8f8a4;
-}
 .navbar-brand.mb-0.h1 {
     font-size: 24px;
 }
 
-a:hover .card {
-    background-color: white !important;
+.wrapper{
+    min-height: 100vh;
 }
