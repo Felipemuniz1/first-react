@@ -1,13 +1,8 @@
 
-import Planets from "./components/planets";
-
+import Routes from "./Routes";
 function App() {
   return (
-      <div className='container'>
-        <div className='row'>
-          <Planets/>
-        </div>
-      </div>
+      <Routes/>
   );
 }
 
