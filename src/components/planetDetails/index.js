@@ -10,26 +10,26 @@ async function getSatellites(id) {
 const Planet = () => {
     const [satellites, setSatellites] = useState([]);
     const [planet, setPlanet] = useState({});
-    let { id } = useParams();
+    let {id} = useParams();
 
     useEffect(() => {
         getSatellites(id).then(data => {
             setSatellites(data['satellites']);
             setPlanet(data['data']);
         })
-    });
+    },[id]);
 
     return (
         <Fragment>
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <span className="navbar-brand mb-0 h1">{planet.name}</span>
+                    <span className="navbar-brand mb-0 h1" name={id}>{planet.name}</span>
                     <Link to='/'><button className='btn btn-outline-primary' >Voltar para Lista</button></Link>
                 </div>
             </nav>
             <div className='wrapper'>
                 <div className="row">
-                    <div className="col-2"><img src={planet.img_url} class="img-thumbnail" /></div>
+                    <div className="col-2"><img src={planet.img_url} className="img-thumbnail" alt=""/></div>
                     <div className="col-9">
                         <h5 >{planet.name}</h5>
                         <p>{planet.description}</p>

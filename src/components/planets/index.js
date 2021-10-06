@@ -27,8 +27,8 @@ const Planets = () => {
             </nav>
             <div className='container'>
                 <div className='row row-cols-4'>
-                    {planets.map((planet) =>
-                        <div className='col'>
+                    {planets.map((planet,index) =>
+                        <div className='col' key={index}>
                             <PlanetCard
                                 name={planet.name}
                                 link={planet.link}

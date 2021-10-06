@@ -6,7 +6,7 @@ const PlanetCard = (props) => {
 
     return (
         <Fragment>
-            <Link to={`/${props.id}`} >
+            <Link className='link' to={`/${props.id}`} >
                 <div className='card'>
                     <ImgUrl url_img={props.url_img}></ImgUrl>
                     <div className='card-body'>
