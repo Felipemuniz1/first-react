@@ -22,7 +22,7 @@ const Planets = () => {
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-fluid">
                     <span className="navbar-brand mb-0 h1">Lista de Planetas</span>
-                    <button className='btn btn-outline-primary' onClick={addPlanet}>Adicionar mais um planeta nessa porra</button>
+                    <button className='btn btn-outline-primary' onClick={addPlanet}>Adicionar mais um planeta teste de commits</button>
                 </div>
             </nav>
             <div className='container'>
